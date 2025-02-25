@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MH DAP Note - Individual Session</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    fieldset {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 5px;
+    }
+    label {
+      display: block;
+      margin-top: 8px;
+    }
+    .inline-group label {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    .time-select, .diagnosis-select {
+      width: 100%;
+      max-width: 400px;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 4px;
+      margin-top: 4px;
+      box-sizing: border-box;
+    }
+    textarea {
+      height: 80px;
+    }
+    #processBtn {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    #summary {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #007ACC;
+      background-color: #f0f8ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Online Forms Entry</h1>
+  <p><strong>Date:</strong> Tuesday, February 25, 2025</p>
+  <h2>MH DAP Note - Individual Session</h2>
+  <p>Enter Data for New Form Entry and Press 'Process Form'</p>
+  
+  <form id="mhForm" action="#" method="post">
+    <!-- Client Information -->
+    <fieldset>
+      <legend>Client Information</legend>
+      <label for="unique_id">Unique ID:</label>
+      <input type="text" id="unique_id" name="unique_id">
+      
+      <label for="client_id">Client ID:</label>
+      <input type="text" id="client_id" name="client_id">
+      
+      <label for="client_name">Client Name:</label>
+      <input type="text" id="client_name" name="client_name">
+      
+      <label for="first_name">First Name:</label>
+      <input type="text" id="first_name" name="first_name">
+      
+      <label for="middle_initial">Middle Initial:</label>
+      <input type="text" id="middle_initial" name="middle_initial" maxlength="1">
+      
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" name="last_name">
+      
+      <label for="suffix">Suffix:</label>
+      <input type="text" id="suffix" name="suffix">
+      
+      <label for="dob">DOB:</label>
+      <input type="date" id="dob" name="dob">
+      
+      <label for="region">Region:</label>
+      <input type="text" id="region" name="region">
+      
+      <label for="entry_date">Date:</label>
+      <input type="date" id="entry_date" name="entry_date">
+    </fieldset>
+
+    <!-- Time Information -->
+    <fieldset>
+      <legend>Time Information</legend>
+      <label for="start_time">Start Time:</label>
+      <select id="start_time" name="start_time" class="time-select">
+        <!-- Options from 6:00 am to 9:00 pm -->
+        <option value="6:00 am">6:00 am</option>
+        <option value="6:15 am">6:15 am</option>
+        <option value="6:30 am">6:30 am</option>
+        <option value="6:45 am">6:45 am</option>
+        <option value="7:00 am">7:00 am</option>
+        <option value="7:15 am">7:15 am</option>
+        <option value="7:30 am">7:30 am</option>
+        <option value="7:45 am">7:45 am</option>
+        <option value="8:00 am">8:00 am</option>
+        <option value="8:15 am">8:15 am</option>
+        <option value="8:30 am">8:30 am</option>
+        <option value="8:45 am">8:45 am</option>
+        <option value="9:00 am">9:00 am</option>
+        <option value="9:15 am">9:15 am</option>
+        <option value="9:30 am">9:30 am</option>
+        <option value="9:45 am">9:45 am</option>
+        <option value="10:00 am">10:00 am</option>
+        <option value="10:15 am">10:15 am</option>
+        <option value="10:30 am">10:30 am</option>
+        <option value="10:45 am">10:45 am</option>
+        <option value="11:00 am">11:00 am</option>
+        <option value="11:15 am">11:15 am</option>
+        <option value="11:30 am">11:30 am</option>
+        <option value="11:45 am">11:45 am</option>
+        <option value="12:00 pm">12:00 pm</option>
+        <option value="12:15 pm">12:15 pm</option>
+        <option value="12:30 pm">12:30 pm</option>
+        <option value="12:45 pm">12:45 pm</option>
+        <option value="1:00 pm">1:00 pm</option>
+        <option value="1:15 pm">1:15 pm</option>
+        <option value="1:30 pm">1:30 pm</option>
+        <option value="1:45 pm">1:45 pm</option>
+        <option value="2:00 pm">2:00 pm</option>
+        <option value="2:15 pm">2:15 pm</option>
+        <option value="2:30 pm">2:30 pm</option>
+        <option value="2:45 pm">2:45 pm</option>
+        <option value="3:00 pm">3:00 pm</option>
+        <option value="3:15 pm">3:15 pm</option>
+        <option value="3:30 pm">3:30 pm</option>
+        <option value="3:45 pm">3:45 pm</option>
+        <option value="4:00 pm">4:00 pm</option>
+        <option value="4:15 pm">4:15 pm</option>
+        <option value="4:30 pm">4:30 pm</option>
+        <option value="4:45 pm">4:45 pm</option>
+        <option value="5:00 pm">5:00 pm</option>
+        <option value="5:15 pm">5:15 pm</option>
+        <option value="5:30 pm">5:30 pm</option>
+        <option value="5:45 pm">5:45 pm</option>
+        <option value="6:00 pm">6:00 pm</option>
+        <option value="6:15 pm">6:15 pm</option>
+        <option value="6:30 pm">6:30 pm</option>
+        <option value="6:45 pm">6:45 pm</option>
+        <option value="7:00 pm">7:00 pm</option>
+        <option value="7:15 pm">7:15 pm</option>
+        <option value="7:30 pm">7:30 pm</option>
+        <option value="7:45 pm">7:45 pm</option>
+        <option value="8:00 pm">8:00 pm</option>
+        <option value="8:15 pm">8:15 pm</option>
+        <option value="8:30 pm">8:30 pm</option>
+        <option value="8:45 pm">8:45 pm</option>
+        <option value="9:00 pm">9:00 pm</option>
+      </select>
+      
+      <label for="total_minutes">Total Minutes:</label>
+      <input type="number" id="total_minutes" name="total_minutes">
+      
+      <label for="total_hours">Total Hours:</label>
+      <input type="number" id="total_hours" name="total_hours" step="0.1">
+      
+      <label for="total_units">Total Units:</label>
+      <input type="number" id="total_units" name="total_units" step="0.1">
+    </fieldset>
+
+    <!-- Service Information -->
+    <fieldset>
+      <legend>Service Information</legend>
+      <label for="service">Service:</label>
+      <select id="service" name="service">
+        <option value="90837_CI">90837 - Individual/Family Therapy 60 min CI</option>
+        <option value="90837_GT">90837 GT - Individual/Family Therapy 60 min-TELEHEALTH</option>
+        <option value="H2019_HR">H2019 HR - Mental Health Therapy</option>
+        <option value="SCC_THERAPY">SCC TREATMENT - MH THERAPY</option>
+      </select>
+      
+      <label for="service_location">Service Location:</label>
+      <select id="service_location" name="service_location">
+        <option value="Home">Home</option>
+        <option value="Office">Office</option>
+        <option value="School">School</option>
+        <option value="Telehealth">TELEHEALTH</option>
+      </select>
+    </fieldset>
+
+    <!-- Goals and Objectives -->
+    <fieldset>
+      <legend>Goals and Objectives Addressed</legend>
+      <!-- Goal 1 -->
+      <label for="goal1">Goal 1:</label>
+      <input type="text" id="goal1" name="goal1" value="Goals under development">
+      <label for="obj1_1">Objective 1.1:</label>
+      <input type="text" id="obj1_1" name="obj1_1">
+      <label for="obj1_2">Objective 1.2:</label>
+      <input type="text" id="obj1_2" name="obj1_2">
+      <label for="obj1_3">Objective 1.3:</label>
+      <input type="text" id="obj1_3" name="obj1_3">
+      
+      <!-- Goal 2 -->
+      <label for="goal2">Goal 2:</label>
+      <input type="text" id="goal2" name="goal2">
+      <label for="obj2_1">Objective 2.1:</label>
+      <input type="text" id="obj2_1" name="obj2_1">
+      <label for="obj2_2">Objective 2.2:</label>
+      <input type="text" id="obj2_2" name="obj2_2">
+      <label for="obj2_3">Objective 2.3:</label>
+      <input type="text" id="obj2_3" name="obj2_3">
+    </fieldset>
+
+    <!-- DAP & Therapeutic Modalities -->
+    <fieldset>
+      <legend>DAP & Therapeutic Modalities</legend>
+      <h3>Therapist met with</h3>
+      <label>Client:
+        <input type="radio" name="therapist_met_client" value="No" checked> No
+        <input type="radio" name="therapist_met_client" value="Yes"> Yes
+      </label>
+      <label>Other:
+        <input type="radio" name="therapist_met_other" value="No" checked> No
+        <input type="radio" name="therapist_met_other" value="Yes"> Yes
+      </label>
+      <label for="therapist_met_other_specify">If other, specify:</label>
+      <input type="text" id="therapist_met_other_specify" name="therapist_met_other_specify">
+      
+      <h3>Therapeutic Modalities used in this session</h3>
+      <label>Cognitive Behavioral Therapy:
+        <input type="radio" name="cbt" value="No" checked> No
+        <input type="radio" name="cbt" value="Yes"> Yes
+      </label>
+      <label>Dialectical Behavioral Therapy:
+        <input type="radio" name="dbt" value="No" checked> No
+        <input type="radio" name="dbt" value="Yes"> Yes
+      </label>
+      <label>Families Moving Forward:
+        <input type="radio" name="fmf" value="No" checked> No
+        <input type="radio" name="fmf" value="Yes"> Yes
+      </label>
+      <label>Narrative Therapy:
+        <input type="radio" name="narrative" value="No" checked> No
+        <input type="radio" name="narrative" value="Yes"> Yes
+      </label>
+      <label>Family Therapy:
+        <input type="radio" name="family_therapy" value="No" checked> No
+        <input type="radio" name="family_therapy" value="Yes"> Yes
+      </label>
+      <label>Parent-Child Interaction Therapy:
+        <input type="radio" name="pcit" value="No" checked> No
+        <input type="radio" name="pcit" value="Yes"> Yes
+      </label>
+      <label>Child-Parent Psychotherapy:
+        <input type="radio" name="cpp" value="No" checked> No
+        <input type="radio" name="cpp" value="Yes"> Yes
+      </label>
+      <label>Gestalt Therapy:
+        <input type="radio" name="gestalt" value="No" checked> No
+        <input type="radio" name="gestalt" value="Yes"> Yes
+      </label>
+      <label>Trauma Focused CBT:
+        <input type="radio" name="tfcbt" value="No" checked> No
+        <input type="radio" name="tfcbt" value="Yes"> Yes
+      </label>
+      <label>Psychoeducation:
+        <input type="radio" name="psychoeducation" value="No" checked> No
+        <input type="radio" name="psychoeducation" value="Yes"> Yes
+      </label>
+      <label>Motivational Interviewing:
+        <input type="radio" name="motivational" value="No" checked> No
+        <input type="radio" name="motivational" value="Yes"> Yes
+      </label>
+      <label>Person Centered Therapy:
+        <input type="radio" name="pct" value="No" checked> No
+        <input type="radio" name="pct" value="Yes"> Yes
+      </label>
+      <label>Play Therapy Techniques:
+        <input type="radio" name="play_therapy" value="No" checked> No
+        <input type="radio" name="play_therapy" value="Yes"> Yes
+      </label>
+      <label>FASCETS Neurobehavioral Model:
+        <input type="radio" name="fascets" value="No" checked> No
+        <input type="radio" name="fascets" value="Yes"> Yes
+      </label>
+      <label>Mindfulness:
+        <input type="radio" name="mindfulness" value="No" checked> No
+        <input type="radio" name="mindfulness" value="Yes"> Yes
+      </label>
+      <label>Other:
+        <input type="radio" name="other_modality" value="No" checked> No
+        <input type="radio" name="other_modality" value="Yes"> Yes
+      </label>
+      <label for="other_modality_specify">If other, specify:</label>
+      <input type="text" id="other_modality_specify" name="other_modality_specify">
+      
+      <label for="dap_d">D:</label>
+      <input type="text" id="dap_d" name="dap_d">
+    </fieldset>
+
+    <!-- Appearance, Mood/Affect, and Thought Content -->
+    <fieldset>
+      <legend>Appearance, Mood/Affect, and Thought Content</legend>
+      <label for="appearance">Appearance:</label>
+      <select id="appearance" name="appearance">
+        <option value="">--Select--</option>
+        <option value="Neatly dressed/groomed">Neatly dressed/groomed</option>
+        <option value="Disheveled/poorly groomed">Disheveled/poorly groomed</option>
+        <option value="Other">Other</option>
+      </select>
+      <label for="appearance_other">If other, specify:</label>
+      <input type="text" id="appearance_other" name="appearance_other">
+
+      <label for="mood">Mood/Affect:</label>
+      <select id="mood" name="mood">
+        <option value="">--Select--</option>
+        <option value="Happy">Happy</option>
+        <option value="Sad">Sad</option>
+        <option value="Anxious">Anxious</option>
+        <option value="Manic">Manic</option>
+        <option value="Flat">Flat</option>
+        <option value="Full Range">Full Range</option>
+        <option value="Other">Other</option>
+      </select>
+      <label for="mood_other">If other, specify:</label>
+      <input type="text" id="mood_other" name="mood_other">
+
+      <label for="thought_content">Thought Content:</label>
+      <select id="thought_content" name="thought_content">
+        <option value="">--Select--</option>
+        <option value="No Concerns">No Concerns</option>
+        <option value="Suicidal Ideation">Suicidal Ideation</option>
+        <option value="Homicidal Ideation">Homicidal Ideation</option>
+        <option value="Other">Other</option>
+      </select>
+      <label for="thought_other">If other, specify:</label>
+      <input type="text" id="thought_other" name="thought_other">
+
+      <label for="actions_taken">Actions taken if Suicidal/Homicidal Ideation found:</label>
+      <textarea id="actions_taken" name="actions_taken">N/A</textarea>
+    </fieldset>
+
+    <!-- Plan (_P_) -->
+    <fieldset>
+      <legend>Plan (_P_)</legend>
+      <label>Continue individual/family therapy as planned:
+        <input type="radio" name="continue_therapy" value="No" checked> No
+        <input type="radio" name="continue_therapy" value="Yes"> Yes
+      </label>
+      <label>Continue clinical case management as planned:
+        <input type="radio" name="continue_case_management" value="No" checked> No
+        <input type="radio" name="continue_case_management" value="Yes"> Yes
+      </label>
+      <label>Continue mental health consultation as planned:
+        <input type="radio" name="continue_consultation" value="No" checked> No
+        <input type="radio" name="continue_consultation" value="Yes"> Yes
+      </label>
+      <label>Preparing for discharge:
+        <input type="radio" name="preparing_discharge" value="No" checked> No
+        <input type="radio" name="preparing_discharge" value="Yes"> Yes
+      </label>
+      <label>Discharge:
+        <input type="radio" name="discharge" value="No" checked> No
+        <input type="radio" name="discharge" value="Yes"> Yes
+      </label>
+    </fieldset>
+
+    <!-- Diagnosis -->
+    <fieldset>
+      <legend>Diagnosis</legend>
+      <label for="primary_diagnosis">Primary Diagnosis:</label>
+      <select id="primary_diagnosis" name="primary_diagnosis" class="diagnosis-select">
+        <option value="">--Select--</option>
+        <option value="313.81">313.81 - Oppositional Defiant Disorder</option>
+        <option value="E30.1">E30.1 - Precocious sexual development and puberty, not elsewhere classified</option>
+        <option value="F06.4">F06.4 - Anxiety Disorder Due to Known Physiological Condition</option>
+        <option value="F10.10">F10.10 - Alcohol abuse, continuous</option>
+        <option value="F31.12">F31.12 - Bipolar 1 disorder, most recent episode or current manic, moderate</option>
+        <option value="F31.81">F31.81 - Bipolar 2</option>
+        <option value="F31.9">F31.9 - Bipolar disorder, unspecified</option>
+        <option value="F32.1">F32.1 - Major depressive affective disorder, single episode, moderate</option>
+        <option value="F32.8">F32.8 - Other Specified Depressive Disorder</option>
+        <option value="F32.9">F32.9 - Unspecified Depressive Disorder</option>
+        <option value="F33.0">F33.0 - Major depressive disorder, recurrent episode, mild</option>
+        <option value="F33.2">F33.2 - Major depressive affective disorder, recurrent episode, severe, without mention of psychotic behavior</option>
+        <option value="F34.1">F34.1 - Dysthymic disorder</option>
+        <option value="F34.8">F34.8 - Disruptive Mood Dysregulation Disorder</option>
+        <option value="F34.81">F34.81 - Disruptive Mood Regulation Disorder-Patterns present for at least 3 months. Lack of observable concern about performance</option>
+        <option value="F39">F39 - Unspecified episodic mood disorder</option>
+        <option value="F40.1">F40.1 - Social phobia</option>
+        <option value="F40.220">F40.220 - Fear of Thunderstorms</option>
+        <option value="F41.0">F41.0 - Panic disorder without agoraphobia</option>
+        <option value="F41.1">F41.1 - Generalized anxiety disorder</option>
+        <option value="F41.8">F41.8 - Other specified anxiety disorders</option>
+        <option value="F41.9">F41.9 - Unspecified Anxiety Disorder</option>
+        <option value="F41.9_2">F41.9 - Unspecified Anxiety Disorder (duplicate)</option>
+        <option value="F41.9_3">F41.9 - Anxiety state, unspecified</option>
+        <option value="F42.8">F42.8 - Other obsessive-compulsive disorder</option>
+        <option value="F42.9">F42.9 - Obsessive-compulsive disorders</option>
+        <option value="F43.0">F43.0 - Other acute reactions to stress</option>
+        <option value="F43.10">F43.10 - Post Traumatic Stress Disorder, unspecified</option>
+        <option value="F43.20">F43.20 - Unspecified adjustment reaction</option>
+        <option value="F43.21">F43.21 - Adjustment disorder with depressed mood</option>
+        <option value="F43.22">F43.22 - Adjustment disorder with anxiety</option>
+        <option value="F43.23">F43.23 - Adjustment disorder with mixed anxiety and depressed mood</option>
+        <option value="F43.24">F43.24 - Adjustment disorder with disturbance of conduct</option>
+        <option value="F43.25">F43.25 - Adjustment Disorder with Mixed Disturbance of Emotions and Conduct</option>
+        <option value="F43.8">F43.8 - Other specified trauma and stressor-related disorder</option>
+        <option value="F43.8_2">F43.8 - Other acute reactions to stress (duplicate)</option>
+        <option value="F43.9">F43.9 - Unspecified Trauma and Stressor Related Disorder</option>
+        <option value="F63.3">F63.3 - Tricholtillomania</option>
+        <option value="F63.81">F63.81 - Intermittent explosive disorder</option>
+        <option value="F63.89">F63.89 - Other disorders of impulse control</option>
+        <option value="F64.2">F64.2 - Gender Dysphoria of Childhood</option>
+        <option value="F70">F70 - Mild intellectual disabilities</option>
+        <option value="F79">F79 - Unspecified intellectual disabilities</option>
+        <option value="F80.0">F80.0 - Phonological disorder</option>
+        <option value="F80.1">F80.1 - Expressive language disorder</option>
+        <option value="F80.2">F80.2 - Mixed receptive-expressive language disorder</option>
+        <option value="F80.81">F80.81 - Childhood onset fluency disorder</option>
+        <option value="F80.82">F80.82 - Social pragmatic communication disorder</option>
+        <option value="F80.89">F80.89 - Other developmental disorders of speech and language</option>
+        <option value="F80.9">F80.9 - Developmental disorder of speech and language, unspecified</option>
+        <option value="F81.9">F81.9 - Developmental disorder of scholastic skills, unspecified</option>
+        <option value="F82">F82 - Specific developmental disorder of motor function</option>
+        <option value="F84.0">F84.0 - Autistic disorder</option>
+        <option value="F84.5">F84.5 - Asperger's syndrome</option>
+        <option value="F84.8">F84.8 - Other pervasive developmental disorders</option>
+        <option value="F84.9">F84.9 - Pervasive developmental disorders, unspecified</option>
+        <option value="F88">F88 - Other Specified Neurodevelopmental Disorder</option>
+        <option value="F88_2">F88 - Other Specified Neurodevelopmental Disorder Associated with Traumatic Brain Injury</option>
+        <option value="F89">F89 - Unspecified Neurodevelopmental Disorder</option>
+        <option value="F90.0">F90.0 - Attention deficit disorder without mention of hyperactivity</option>
+        <option value="F90.1">F90.1 - Attention deficit disorder with hyperactivity</option>
+        <option value="F90.2">F90.2 - Attention-deficit hyperactivity disorder, combined type</option>
+        <option value="F90.8">F90.8 - Attention-deficit hyperactivity disorder, other type</option>
+        <option value="F90.9">F90.9 - Attention-deficit hyperactivity disorder, unspecified type</option>
+        <option value="F91.1">F91.1 - Conduct disorder, childhood-onset type</option>
+        <option value="F91.3">F91.3 - Oppositional defiant disorder</option>
+        <option value="F91.8">F91.8 - Other specified disruptive, impulse-control, and conduct disorder</option>
+        <option value="F91.9">F91.9 - Unspecified disturbance of conduct</option>
+        <option value="F93.0">F93.0 - Separation anxiety disorder</option>
+        <option value="F93.8">F93.8 - Other childhood emotional disorders</option>
+        <option value="F93.9">F93.9 - Unspecified emotional disturbance of childhood or adolescence</option>
+        <option value="F94.0">F94.0 - Selective mutism</option>
+        <option value="F94.0_2">F94.0 - Selective mutism (duplicate)</option>
+        <option value="F94.1">F94.1 - Reactive attachment disorder of childhood</option>
+        <option value="F94.2">F94.2 - Disinhibited attachment disorder of childhood</option>
+        <option value="F95.1">F95.1 - Chronic motor or vocal tic disorder</option>
+        <option value="F95.2">F95.2 - Tourette's disorder</option>
+        <option value="F98.0">F98.0 - Enuresis</option>
+        <option value="F98.1">F98.1 - Encopresis not due to a substance or known physiological condition</option>
+        <option value="F98.3">F98.3 - Pica</option>
+        <option value="F98.8">F98.8 - Other emotional disturbances of childhood or adolescence</option>
+        <option value="F98.9">F98.9 - Unspecified behavioral and emotional disorders with onset usually occurring in childhood and adolescence</option>
+        <option value="G80.9">G80.9 - Cerebral palsy, unspecified</option>
+        <option value="M62.81">M62.81 - Muscle weakness, generalized</option>
+        <option value="M79.644">M79.644 - Pain in right finger(s)</option>
+        <option value="P04.3">P04.3 - Alcohol affecting fetus or newborn via placenta or breast milk</option>
+        <option value="Q77.4">Q77.4 - ACHONDROPLASIA</option>
+        <option value="Q86.0">Q86.0 - Fetal Alcohol Syndrome</option>
+        <option value="Q90.0">Q90.0 - Down syndrome, unspecified</option>
+        <option value="R13.10">R13.10 - Dysphagia, unspecified</option>
+        <option value="R13.11">R13.11 - Dysphagia, oral phase</option>
+        <option value="R20.9">R20.9 - Unspecified disturbances of skin sensation</option>
+        <option value="R27.8">R27.8 - Other lack of coordination</option>
+        <option value="R27.9">R27.9 - Unspecified lack of coordination</option>
+        <option value="R29.898">R29.898 - Other symptoms and signs involving the musculoskeletal system</option>
+        <option value="R41.4">R41.4 - Neurologic neglect syndrome</option>
+        <option value="R41.840">R41.840 - Attention and concentration deficit</option>
+        <option value="R44.8">R44.8 - Other symptoms and signs involving general sensations and perceptions</option>
+        <option value="R44.9">R44.9 - Unspecified symptoms and signs involving general sensations and perceptions</option>
+        <option value="R48.2">R48.2 - Apraxia</option>
+        <option value="R48.8">R48.8 - Other Symbolic Dysfunctions</option>
+        <option value="R62.0">R62.0 - Delayed milestone in childhood</option>
+        <option value="R62.50">R62.50 - Unspecified lack of expected normal physiological development in childhood</option>
+        <option value="R63.3">R63.3 - Feeding difficulties</option>
+        <option value="T74.12XA">T74.12XA - Child physical abuse, confirmed, initial encounter</option>
+        <option value="T74.92XA">T74.92XA - Other child abuse and neglect, confirmed</option>
+        <option value="T76.22xA">T76.22xA - Child sexual abuse, suspected, initial encounter</option>
+        <option value="T76.92XA">T76.92XA - Other child abuse and neglect, suspected</option>
+        <option value="Z03.89">Z03.89 - Observation for other suspected mental condition</option>
+        <option value="Z62.29">Z62.29 - Upbringing Away From Parents</option>
+        <option value="Z62.820">Z62.820 - Parent-Child Relational Problem</option>
+        <option value="Z63.4">Z63.4 - Bereavement, uncomplicated</option>
+        <option value="Z63.8">Z63.8 - Other specified family circumstances</option>
+        <option value="Z69.010">Z69.010 - Counseling for victim of child abuse</option>
+        <option value="Z71.89">Z71.89 - Counseling for marital and partner problems, unspecified</option>
+        <option value="Z71.89_2">Z71.89 - Counseling for parent-child problem, unspecified</option>
+        <option value="Z71.9">Z71.9 - Other counseling or consultation</option>
+      </select>
+
+      <label for="secondary_diagnosis">Secondary Diagnosis:</label>
+      <input type="text" id="secondary_diagnosis" name="secondary_diagnosis" placeholder="Add manually if needed">
+      
+      <label for="tertiary_diagnosis">Tertiary Diagnosis:</label>
+      <input type="text" id="tertiary_diagnosis" name="tertiary_diagnosis" placeholder="Add manually if needed">
+      
+      <label for="quaternary_diagnosis">Quaternary Diagnosis:</label>
+      <input type="text" id="quaternary_diagnosis" name="quaternary_diagnosis" placeholder="Add manually if needed">
+      
+      <label for="additional_diagnosis">Additional Diagnosis Information:</label>
+      <textarea id="additional_diagnosis" name="additional_diagnosis"></textarea>
+    </fieldset>
+
+  </form>
+  
+  <!-- Process Form Button -->
+  <button id="processBtn" type="submit">Process Form</button>
+
+  <!-- Summary Section -->
+  <div id="summary"></div>
+
+  <script>
+    // When the page loads, attach a click event handler to the Process Form button.
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('processBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        processForm();
+      });
+    });
+
+    // Process the form by gathering all values, logging them, and creating a summary.
+    function processForm() {
+      const form = document.getElementById('mhForm');
+      const formData = new FormData(form);
+      let dataObject = {};
+
+      // Convert form data to a plain object.
+      formData.forEach((value, key) => {
+        dataObject[key] = value;
+      });
+
+      console.log('Form Data:', dataObject);
+
+      // Build an HTML summary from the form data.
+      let summaryHtml = '<h2>Form Summary</h2><ul>';
+      for (let key in dataObject) {
+        summaryHtml += '<li><strong>' + key + ':</strong> ' + dataObject[key] + '</li>';
+      }
+      summaryHtml += '</ul>';
+
+      // Display the summary in the "summary" div.
+      document.getElementById('summary').innerHTML = summaryHtml;
+      
+      alert("Form processed! Check the summary below or the console for details.");
+    }
+  </script>
+</body>
+</html>
